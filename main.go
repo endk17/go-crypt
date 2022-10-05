@@ -142,4 +142,8 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(string(hashedPassword))
+
+	// Comparing the password with the hash
+	err = bcrypt.CompareHashAndPassword(hashedPassword, plainText)
+	fmt.Println(err)
 }
